@@ -6,7 +6,7 @@ let nombrePaises = [];
 let capitalesPaises = [];
 let banderasPaises = [];
 const app = express();
-const PORT = process.env.PORT || 1234;
+const PORT = process.env.PORT ?? 3000;
 const paisesUrl = "https://restcountries.com/v3.1/all";
 app.use(express.json());
 app.use(cors());
