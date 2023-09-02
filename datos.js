@@ -25,8 +25,11 @@ const cargarDatos = async () => {
 
 // Ruta para cargar los datos
 app.get('/', async (request, response) => {
-    await cargarDatos();
-    response.status(200).json({ message: "Datos cargados exitosamente" });
+    //quiero enviar un h1 como respuesta de una peticion?
+    response.send({
+        "h1": "Este es un encabezado de nivel 1"
+      })
+    response.status(200).json();
 });
 
 // Ruta para obtener los nombres de los países
