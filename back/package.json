@@ -1,0 +1,27 @@
+{
+  "name": "integrador",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "intregador de la materia WEB II de ULP",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "integrador",
+    "web",
+    "back",
+    "end",
+    "api"
+  ],
+  "author": "Toloza Leonel",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.0.1"
+  }
+}
