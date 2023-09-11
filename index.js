@@ -1,4 +1,4 @@
-import {cargarDatos} from "./datos.js";
+import {cargarDatos} from "./server.js";
 async function main() {
     await cargarDatos(); // Espera a que los datos se carguen
     console.log('index.js - linea 6');
