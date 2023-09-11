@@ -1,5 +1,5 @@
 import { generarBandera } from "./banderas.js";
-import { datos } from "./main.js";
+import { datos } from "./server.js";
 
 export let respuestaCorrecta;
 export let opcionesCapitales = [];

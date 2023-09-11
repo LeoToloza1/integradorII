@@ -1,10 +1,10 @@
 import { preguntasAleatorias } from "./capitales.js";
 import { datos } from "./server.js";
 
-let opcionesBanderas = [];
-let respuestaCorrectaBandera;
+export let opcionesBanderas = [];
+export let respuestaCorrectaBandera;
 
-function generarOpcionesBanderas(respuestaCorrectaBandera) {
+export function generarOpcionesBanderas(respuestaCorrectaBandera) {
     opcionesBanderas = [];
     opcionesBanderas.push(respuestaCorrectaBandera);
     while (opcionesBanderas.length < 4) {
@@ -18,7 +18,8 @@ function generarOpcionesBanderas(respuestaCorrectaBandera) {
     return opcionesBanderas;
 }
 
-function generarBandera() {
+export function generarBandera() {
+    const nuevasPreguntas = [];
     for (let i = 0; i < 5; i++) {
         const indiceAleatorio = Math.floor(Math.random() * datos.length);
         const paisActual = datos[indiceAleatorio];
@@ -28,9 +29,7 @@ function generarBandera() {
             respuesta: paisActual.flags.png,
             opciones: generarOpcionesBanderas(paisActual.flags.png)
         };
-        preguntasAleatorias.push(pregunta);
+        nuevasPreguntas.push(pregunta);
     }
-    return pregunta;
+    return nuevasPreguntas;
 }
-
-export default { opcionesBanderas, respuestaCorrectaBandera, generarBandera, generarOpcionesBanderas };

@@ -25,11 +25,11 @@ function iniciarJuego() {
     }
   } else {
     mostrarPuntaje();
-    btnReiniciar();
+    //btnReiniciar();
   }
 }
 
-function btnReiniciar() {
+/*function btnReiniciar() {
   // Reiniciar el juego: Restablecer las variables y volver a mezclar las opciones
   preguntaActual = 0;
   respCorrectas = 0;
@@ -37,7 +37,7 @@ function btnReiniciar() {
   ocultarPuntaje();
   mezclarOpciones();
   iniciarJuego();
-}
+}*/
 
 function mostrarPuntaje() {
   console.log('Puntaje: ' + respCorrectas);
@@ -74,7 +74,7 @@ function opcionesElementClickListener(e) {
 export default {
   mezclarOpciones,
   iniciarJuego,
-  btnReiniciar,
+  //btnReiniciar,
   mostrarPuntaje,
   ocultarPuntaje,
   opcionesElementClickListener,
