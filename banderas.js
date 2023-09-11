@@ -1,5 +1,5 @@
 import { preguntasAleatorias } from "./capitales.js";
-import { datos } from "./main.js";
+import { datos } from "./datos.js";
 
 let opcionesBanderas = [];
 let respuestaCorrectaBandera;

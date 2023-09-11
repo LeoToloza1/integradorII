@@ -1,6 +1,6 @@
 // Importa las funciones necesarias desde capitales.js y banderas.js
-const { opcionesCapitales, preguntasAleatorias } = require("./capitales.js");
-const { opcionesBanderas } = require("./banderas.js");
+import { opcionesCapitales, preguntasAleatorias } from "./capitales.js";
+import { opcionesBanderas } from "./banderas.js";
 
 // Variables y funciones que serán utilizadas en el servidor de Node.js
 let opciones = [];
@@ -71,7 +71,7 @@ function opcionesElementClickListener(e) {
 // Ejemplo: opcionesElement.addEventListener('click', opcionesElementClickListener);
 
 // Exporta las funciones que necesitas en tu servidor de Node.js
-module.exports = {
+export default {
   mezclarOpciones,
   iniciarJuego,
   btnReiniciar,

@@ -1,15 +1,18 @@
 import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
+
+const app = express();
+const PORT = process.env.PORT || 8080;
+const paisesUrl = "https://restcountries.com/v3.1/all";
+app.use(express.json());
+app.use(cors());
+
 let datos = [];
 let nombrePaises = [];
 let capitalesPaises = [];
 let banderasPaises = [];
-const app = express();
-const PORT = process.env.PORT ?? 8080;
-const paisesUrl = "https://restcountries.com/v3.1/all";
-app.use(express.json());
-app.use(cors());
+
 const cargarDatos = async () => {
     try {
         const resultados = await fetch(paisesUrl);
@@ -25,10 +28,10 @@ const cargarDatos = async () => {
 
 // Ruta para cargar los datos
 app.get('/', async (request, response) => {
-    //quiero enviar un h1 como respuesta de una peticion?
+    // Aquí puedes enviar una respuesta personalizada si es necesario
     response.send({
         "h1": "Este es un encabezado de nivel 1"
-      })
+    });
     response.status(200).json();
 });
 
@@ -39,16 +42,13 @@ app.get('/obtenerDatos', async (request, response) => {
         nombrePaises: nombrePaises,
         capitalesPaises: capitalesPaises,
         banderasPaises: banderasPaises
-
     };
     response.send(dataToSend);
 });
-
-
 // Escuchar en el puerto designado
 app.listen(PORT, () => {
     console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
 
 // Carga los datos al iniciar el servidor
-export {cargarDatos};
+export { cargarDatos };
