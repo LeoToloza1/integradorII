@@ -17,34 +17,21 @@ function mezclarOpciones() {
 function iniciarJuego() {
   if (preguntaActual < preguntasAleatorias.length) {
     const pregunta = preguntasAleatorias[preguntaActual];
-    console.log(`Pregunta: ${pregunta.texto}`);
+   // console.log(`Pregunta: ${pregunta.texto}`);
     respuesta = pregunta.respuesta;
     for (let i = 0; i < pregunta.opciones.length; i++) {
       const opcion = pregunta.opciones[i];
-      console.log(`Opción ${i + 1}: ${opcion}`);
+      //console.log(`Opción ${i + 1}: ${opcion}`);
     }
   } else {
     mostrarPuntaje();
-    //btnReiniciar();
   }
 }
-
-/*function btnReiniciar() {
-  // Reiniciar el juego: Restablecer las variables y volver a mezclar las opciones
-  preguntaActual = 0;
-  respCorrectas = 0;
-  respIncorrectas = 0;
-  ocultarPuntaje();
-  mezclarOpciones();
-  iniciarJuego();
-}*/
-
 function mostrarPuntaje() {
   console.log('Puntaje: ' + respCorrectas);
 }
 
 function ocultarPuntaje() {
-  // Lógica para ocultar el puntaje (si es necesario)
 }
 
 function validarRespuesta(seleccion, respuesta) {

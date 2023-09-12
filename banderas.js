@@ -1,4 +1,4 @@
-import { preguntasAleatorias } from "./capitales.js";
+import { preguntasAleatorias} from "./capitales.js";
 import { datos } from "./server.js";
 
 export let opcionesBanderas = [];
@@ -19,7 +19,6 @@ export function generarOpcionesBanderas(respuestaCorrectaBandera) {
 }
 
 export function generarBandera() {
-    const nuevasPreguntas = [];
     for (let i = 0; i < 5; i++) {
         const indiceAleatorio = Math.floor(Math.random() * datos.length);
         const paisActual = datos[indiceAleatorio];
@@ -29,7 +28,6 @@ export function generarBandera() {
             respuesta: paisActual.flags.png,
             opciones: generarOpcionesBanderas(paisActual.flags.png)
         };
-        nuevasPreguntas.push(pregunta);
+        preguntasAleatorias.push(pregunta);
     }
-    return nuevasPreguntas;
 }

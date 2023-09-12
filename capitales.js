@@ -18,8 +18,19 @@ export function generarPreguntas() {
       opciones: generarOpciones(paisActual.capital[0]),
     };
     preguntasAleatorias.push(pregunta);
+   ;
   }
   generarBandera();
+  console.log(JSON.stringify(preguntasAleatorias[0]))
+  console.log(JSON.stringify(preguntasAleatorias[1]))
+  console.log(JSON.stringify(preguntasAleatorias[2]))
+  console.log(JSON.stringify(preguntasAleatorias[3]))
+  console.log(JSON.stringify(preguntasAleatorias[4]))
+  console.log(JSON.stringify(preguntasAleatorias[5]))
+  console.log(JSON.stringify(preguntasAleatorias[6]))
+  console.log(JSON.stringify(preguntasAleatorias[7]))
+  console.log(JSON.stringify(preguntasAleatorias[8]))
+  console.log(JSON.stringify(preguntasAleatorias[9]))
   preguntasAleatorias.sort(() => Math.random() - 0.5);
 }
 
@@ -28,7 +39,7 @@ export function generarOpciones(respuestaCorrecta) {
   opcionesCapitales.push(respuestaCorrecta);
   while (opcionesCapitales.length < 4) {
     const indiceAleatorio = Math.floor(Math.random() * datos.length);
-    const opcionAleatoria = datos[indiceAleatorio].capital[0];
+    const opcionAleatoria = datos[indiceAleatorio].capital;
     if (!opcionesCapitales.includes(opcionAleatoria)) {
       opcionesCapitales.push(opcionAleatoria);
     }
@@ -38,5 +49,6 @@ export function generarOpciones(respuestaCorrecta) {
 }
 export function obtenerPreguntas() {
   generarPreguntas();
+ // console.log(JSON.stringify(preguntasAleatorias[0]))
   return preguntasAleatorias;
 }

@@ -2,7 +2,7 @@ import express from "express";
 import fetch from "node-fetch";
 import cors from "cors";
 import funciones from "./main.js";
-
+import {obtenerPreguntas, preguntasAleatorias} from "./capitales.js"
 const app = express();
 const PORT = process.env.PORT || 8080;
 const paisesUrl = "https://restcountries.com/v3.1/all";
@@ -21,10 +21,17 @@ const cargarDatos = async () => {
 };
 
 // Ruta para cargar los datos
-app.get('/iniciarJuego', async (request, response) => {
+app.get('/cargarDatos', async (request, response) => {
     await cargarDatos();
-    funciones.iniciarJuego();
-    response.status(200).json({ mensaje: "Juego iniciado" });
+    response.status(200).json({ mensaje: "datos Cargados" });
+});
+
+app.get('/obtenerPreguntas', async (request, response) => {
+    await cargarDatos();
+    const preguntas = obtenerPreguntas(); // Modifica obtenerPreguntas() para que devuelva las preguntas
+    funciones.mezclarOpciones();
+    const preguntasGeneradas = funciones.iniciarJuego(preguntas); // Pasa las preguntas a iniciarJuego()
+    response.json({ preguntas: preguntasGeneradas }); // Envía las preguntas generadas como respuesta
 });
 
 
