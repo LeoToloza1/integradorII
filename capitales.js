@@ -14,23 +14,13 @@ export function generarPreguntas() {
     const pregunta = {
       tipo: "capital",
       texto: `Cual es la capital de ${paisActual.name.common}?`,
-      respuesta: paisActual.capital[0],
-      opciones: generarOpciones(paisActual.capital[0]),
+      respuesta: paisActual.capital,
+      opciones: generarOpciones(paisActual.capital),
     };
     preguntasAleatorias.push(pregunta);
    ;
   }
   generarBandera();
-  console.log(JSON.stringify(preguntasAleatorias[0]))
-  console.log(JSON.stringify(preguntasAleatorias[1]))
-  console.log(JSON.stringify(preguntasAleatorias[2]))
-  console.log(JSON.stringify(preguntasAleatorias[3]))
-  console.log(JSON.stringify(preguntasAleatorias[4]))
-  console.log(JSON.stringify(preguntasAleatorias[5]))
-  console.log(JSON.stringify(preguntasAleatorias[6]))
-  console.log(JSON.stringify(preguntasAleatorias[7]))
-  console.log(JSON.stringify(preguntasAleatorias[8]))
-  console.log(JSON.stringify(preguntasAleatorias[9]))
   preguntasAleatorias.sort(() => Math.random() - 0.5);
 }
 
